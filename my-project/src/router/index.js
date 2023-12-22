@@ -1,10 +1,7 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import profile from "../views/profile.vue";
 import authPage from "../views/auth-page.vue";
 import stats from "../views/stats.vue";
-
-Vue.use(VueRouter);
 
 const routes = [
   {
@@ -24,9 +21,8 @@ const routes = [
   },
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: "/",
+const router = createRouter({
+  history: createWebHistory(),
   routes,
 });
 

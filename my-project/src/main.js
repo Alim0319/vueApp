@@ -1,4 +1,4 @@
-import Vue from "vue";
+import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import { store } from "./store";
@@ -9,19 +9,24 @@ import "sweetalert2/dist/sweetalert2.min.css";
 import axios from "axios";
 import VueAxios from "vue-axios";
 
-Vue.config.productionTip = false;
-// axios
-Vue.use(VueAxios, axios);
-// sweet alert config
+const app = createApp(App);
+
+// Configure axios
+app.use(VueAxios, axios);
+
+// Configure sweet alert
 const options = {
   confirmButtonColor: "#3085d6",
   cancelButtonColor: "#d33",
 };
-Vue.use(VueSweetalert2, options);
+app.use(VueSweetalert2, options);
 
-new Vue({
-  router,
-  store,
-  vuetify,
-  render: (h) => h(App),
-}).$mount("#app");
+// Use router and store
+app.use(router);
+app.use(store);
+
+// Use vuetify
+app.use(vuetify);
+
+// Mount the app
+app.mount("#app");

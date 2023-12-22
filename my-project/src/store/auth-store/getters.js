@@ -1,3 +1,5 @@
+// store/auth-store/getters.js
+
 export const getters = {
   getIsSignInPanelActive: (state) => {
     return state.isSignInPanelActive;

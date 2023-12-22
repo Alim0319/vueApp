@@ -1,8 +1,9 @@
-import Vue from "vue";
-import Vuex from "vuex";
+// store/index.js
+
+import { createStore } from "vuex";
 import { authPageModule } from "./auth-store/index.js";
-Vue.use(Vuex);
-export const store = new Vuex.Store({
+
+export default createStore({
   state: {},
   getters: {},
   mutations: {},

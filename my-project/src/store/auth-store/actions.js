@@ -1,5 +1,7 @@
+// store/auth-store/actions.js
+
 import axios from "axios";
-import router from "@/router"; // Make sure to adjust the path based on your project structure
+import router from "@/router"; // Adjust the path based on your project structure
 
 export const actions = {
   loginAndSaveToken(formData) {
